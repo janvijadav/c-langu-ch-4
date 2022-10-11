@@ -1,20 +1,38 @@
 
-	///structure example 2
-	//example of initialization of stru.
+	//structure 3
+	//example of array with in structure..
 
-	struct Demo
+	struct stud
 	{
-		int a;
-		float b;
-		char c;
+		int rn;
+		char nm[20];
+		int m[3],total;
 	};
+
 	void main()
 	{
-		struct Demo d={100,19.234,'c'};
+		struct stud s[5];
+		int i,j;
 		clrscr();
-		printf("\n a=%d",d.a);
-		printf("\n b=%.2f",d.b);
-		printf("\n c=%c",d.c);
-		printf("\n struct Demo occupy %d bytes",sizeof(d));
-		getch();
+		for(i=0;i<5;i++)
+		{
+			printf("Enter rollno,Name and Marks of 3");
+			scanf("%d %s",&s[i].rn,s[i].nm);
+			s[i].total=0;
+			for(j=0;j<3;j++)
+			{
+				scanf("%d",&s[i].m[j]);
+				s[i].total+=s[i].m[j];
+			}
+		}
+		printf("\n Rollno \t Name \t m1 \t m2 \t m3 \t total");
+		for(i=0;i<5;i++)
+	{
+		printf("\n %d \t \t %s", s[i].rn,s[i].nm);
+		for(j=0;j<3;j++)
+		printf("\t %d",s[i].m[j]);
+		printf("\t %d",s[i].total);
 	}
+	getch();
+}
+
